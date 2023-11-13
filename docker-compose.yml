@@ -1,0 +1,28 @@
+version: "24.0.5"
+services:
+  ngingx:
+    image: isan19973788/nginx
+    container_name: nginx
+    build: ./nginx
+    ports:
+      - "80:80"
+    restart: always
+    volumes:
+      - ./web:/web
+    depends_on:
+      - fastapi
+
+  fastapi:
+    image: isan19973788/fastapi
+    build:
+      dockerfile: Dockerfile
+    container_name: fastapi
+
+  command:
+    - gunicorn -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8000
+
+  restart: always
+  volumes:
+    - ./app:/app
+  expose:
+    - "8000"
