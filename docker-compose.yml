@@ -4,7 +4,7 @@ services:
     image: isan19973788/nginx
     platform: linux/amd64
     container_name: nginx
-    build: ./nginx
+    # build: ./nginx
     ports:
       - "80:80"
     restart: always
@@ -16,8 +16,8 @@ services:
   fastapi:
     image: isan19973788/fastapi
     platform: linux/amd64
-    build:
-      dockerfile: Dockerfile
+    # build:
+    #   dockerfile: Dockerfile
     container_name: fastapi
     command:
       - gunicorn -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8000
