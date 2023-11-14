@@ -1,8 +1,7 @@
 version: "3"
 services:
   ngingx:
-    image: isan19973788/nginx
-    platform: linux/arm64
+    image: nginx:latest
     container_name: nginx
     # build: ./nginx
     ports:
@@ -15,7 +14,6 @@ services:
 
   fastapi:
     image: isan19973788/fastapi
-    platform: linux/arm64
     # build:
     #   dockerfile: Dockerfile
     container_name: fastapi
