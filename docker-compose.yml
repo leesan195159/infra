@@ -17,11 +17,11 @@ services:
     # build:
     #   dockerfile: Dockerfile
     container_name: fastapi
-    # command:
-    #   - uvicorn
-    #   - main:app
-    #   - --bind
-    #   - 0.0.0.0:8000
+    command:
+      - uvicorn
+      - main:app
+      - --bind
+      - 0.0.0.0:8000
     restart: always
     volumes:
       - ./app:/app
