@@ -31,4 +31,4 @@ services:
   
 networks:
   web-network:
-    drover: bridge
+    driver: bridge
