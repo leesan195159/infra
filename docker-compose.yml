@@ -18,8 +18,8 @@ services:
     #   dockerfile: Dockerfile
     container_name: fastapi
     restart: always
-    volumes:
-      - ./app:/app
+    # volumes:
+    #   - ./app:/app
     # expose:
     #   - "8000"
     ports:
