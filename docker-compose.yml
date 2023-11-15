@@ -12,7 +12,7 @@ services:
     depends_on:
       - fastapi
     networks:
-      - fastapi-bridge
+      - web-network
 
   fastapi:
     image: isan19973788/fastapi
@@ -27,8 +27,8 @@ services:
     ports:
       - 8000:8000
     networks:
-      - fastapi-bridge
+      - web-network
   
 networks:
-  fastapi-bridge:
+  web-network:
     drover: bridge
