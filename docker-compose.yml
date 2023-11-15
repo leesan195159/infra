@@ -5,12 +5,14 @@ services:
     container_name: nginx
     # build: ./nginx
     ports:
-      - 80:80
+      - 81:81
     restart: always
     # volumes:
     #   - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - fastapi
+    networks:
+      - fastapi-bridge
 
   fastapi:
     image: isan19973788/fastapi
@@ -24,3 +26,9 @@ services:
     #   - "8000"
     ports:
       - 8000:8000
+    networks:
+      - fastapi-bridge
+  
+networks:
+  fastapi-bridge:
+    drover: bridge
