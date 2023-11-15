@@ -1,7 +1,7 @@
 version: "3"
 services:
   ngingx:
-    image: nginx:test
+    image: isan19973788/nginx
     container_name: nginx
     # build: ./nginx
     ports:
